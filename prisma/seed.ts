@@ -1,10 +1,9 @@
 import { PrismaClient } from '@prisma/client';
 
-// Inicializar Prisma Client
 const prisma = new PrismaClient();
 
 async function main() {
-  // Crear dos contenidos de ejemplo
+  
   const content1 = await prisma.content.upsert({
     where: { title: 'Contenido sobre extraterrestres' },
     update: {},
@@ -37,6 +36,5 @@ main()
     process.exit(1);
   })
   .finally(async () => {
-    // Cerrar Prisma Client al finalizar
     await prisma.$disconnect();
   });

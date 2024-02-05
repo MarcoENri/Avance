@@ -8,7 +8,7 @@ export class ContentService {
   constructor(private prisma: PrismaService) {}
 
   createContent(createContentDto: CreateContentDto) {
-    return this.prisma.content.create({data:createContentDto});
+    return 'this action add a new hospital';
   }
 
   findAll() {
